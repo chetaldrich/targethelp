@@ -17,8 +17,8 @@ def sms():
     	w = " says "
     	y = l[2]
 	print l
-	account_sid = "AC165eff86cf356130f0b5ed4f928fbcd4"
-	auth_token = "73ee93adbf5031b083bf7df9a2e143be"
+	account_sid = "INSERT TWILIO ACCOUNT ID HERE"
+	auth_token = "INSERT TWILIO ACCOUNT AUTHENTICATION TOKEN HERE"
 	client = TwilioRestClient(account_sid, auth_token)
 	message = client.messages.create(body="Hey! "+x +mid +a +w +y,
 	to="+16417808874", # Replace with your phone number

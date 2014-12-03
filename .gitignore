@@ -1,0 +1,11 @@
+# ignore compiled python files
+
+*.pyc
+
+# Ignore API keys file
+
+apikeys.txt
+
+# operating system generated files
+
+.DS_Store
