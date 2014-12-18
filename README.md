@@ -1,7 +1,7 @@
 Target Help
 ============
 
-Top 20, UHack (University of Minnesota Hackathon 2014) :tada
+Top 20, UHack (University of Minnesota Hackathon 2014) 
 
 This help center-like web application was designed to provide a quick, simple interface
 by which customers could quickly ask questions of staff via text and get them answered quickly.
