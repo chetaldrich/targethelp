@@ -10,3 +10,6 @@ apikeys.txt
 # operating system generated files
 
 .DS_Store
+
+# ignore venv
+venv/

@@ -9,9 +9,9 @@ from send_sms import sms
 import random
 
 
-DATABASE = 'thing.db'
+DATABASE = 'messages.db'
 DEBUG = True
-SECRET_KEY = 'jjjgl'
+SECRET_KEY = 'pass'
 
 app = Flask(__name__, static_url_path='/static')
 app.config.from_object(__name__)
@@ -29,11 +29,11 @@ def get_db():
 
 def connect_db():
     return dbapi2.connect(app.config['DATABASE'])
- 
+
 @app.before_request
 def before_request():
     g.db = connect_db()
- 
+
 @app.teardown_appcontext
 def close_db(error):
     if hasattr(g, 'sqlite_db'):
@@ -44,11 +44,10 @@ def show_wimpers():
     cur = get_db().execute('select * from wimpers order by id desc')
     stuff  = cur.fetchall()
     cur.close()
-    return render_template('show_wimpers.html', W = stuff)
+    return render_template('index.html', W = stuff)
 
 @app.route("/", methods=['GET', 'POST'])
 def add_wimper(): #ADD THE HELP OPTION
-    """Respond to incoming calls with a simple text message."""
     resp = twilio.twiml.Response()
     msg = str(request.values['Body'])
     l = msg.split("#")
@@ -57,7 +56,7 @@ def add_wimper(): #ADD THE HELP OPTION
     xmessage = l[2]
 
     e_number = random.randint(0,13)
-    employee = ["billy","Sam","Anna","Chet","Taylor","Saba","Sam","Nik","Joe","Samantha","Robert","Bob","Kenn","David"]
+    employee = ["billy","Sam","Anna","Chet","Taylor","Saba","Sam","Nick","Joe","Samantha","Robert","Bob","Ken","David"]
     xemployee = employee[e_number]
     xstatus = "waiting"
     mid = ". An agent will be with you in a moment! You said "
@@ -66,9 +65,6 @@ def add_wimper(): #ADD THE HELP OPTION
     g.db.execute('insert into wimpers (num, name, message, employee, status) values (?,?,?,?,?)', [aile, xname, xmessage, xemployee, xstatus])
     g.db.commit()
     return str(resp)
-#@app.route("http://api.target.com/v2/products/storeLocations?productId=070-09-0141&storeId=694&key=[J5PsS2XGuqCnkdQq0Let6RSfvU7oyPwF]")
-#def check_product ():
-    #return 
 
 if __name__ == '__main__':
     app.run(debug=True)

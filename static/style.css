@@ -1,0 +1,66 @@
+/*Styling for index.html*/
+
+/*navigation bar */
+
+.navbar-custom {
+	background-color: rgb(170, 19, 1);
+	color:#ffffff;
+	border-radius:0;
+	margin-bottom: 10px;
+}
+
+.navbar .container {
+	height: 4.3em;
+}
+
+.navbar-brand  {
+	margin-top: -10px;
+}
+
+/*jumbotron*/
+
+.jumbotron {
+	background-image: url("target.png");
+	min-height: 50vh;
+}
+
+/*table styling*/
+
+.table {
+	width:100%;
+	text-align: center;
+}
+
+.firstrow {
+	text-align: center;
+	font-weight: bold;
+	color:black;
+}
+
+td {
+	border: 1px solid #D4D4D4;
+}
+
+tr{
+	height:24px;
+	font-family: verdana,helvetica,arial,sans-serif;
+}
+
+.table tr:nth-child(2n) {
+	background-color: #FFF;
+}
+
+.table tr:nth-child(2n+1) {
+	background-color: #F1F1F1;
+}
+
+.table td:nth-child(3){
+	color:maroon;
+}
+
+/*footer*/
+
+.help {
+	text-align: center;
+	overflow: hidden;
+}

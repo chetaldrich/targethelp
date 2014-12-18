@@ -5,9 +5,8 @@ from flask import render_template
 import twilio.twiml
 from twilio.rest import TwilioRestClient
 from pprint import pprint
-# Your Account Sid and Auth Token from twilio.com/user/account
-def sms():
 
+def sms():
 	resp = twilio.twiml.Response()
     	msg = str(request.values['Body'])
     	l = msg.split("#")
@@ -17,14 +16,13 @@ def sms():
     	w = " says "
     	y = l[2]
 	print l
-	account_sid = "INSERT TWILIO ACCOUNT ID HERE"
-	auth_token = "INSERT TWILIO ACCOUNT AUTHENTICATION TOKEN HERE"
+	account_sid = "Insert Twilio account ID here"
+	auth_token = "Insert Twilio auth_token here"
 	client = TwilioRestClient(account_sid, auth_token)
 	message = client.messages.create(body="Hey! "+x +mid +a +w +y,
 	to="+16417808874", # Replace with your phone number
-	from_="+17639511604") # Replace with your Twilio number
+	from_="+16415696366") # Replace with your Twilio number
 	print message.sid
-	#return message.sid
 
 if __name__ == "__main__":
     app.run(debug=True)
