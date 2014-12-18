@@ -1,7 +1,7 @@
 Target Help
 ============
 
-Top 20, UHack (University of Minnesota Hackathon 2014) 
+Top 20, UHack (University of Minnesota Hackathon 2014)
 
 This help center-like web application was designed to provide a quick, simple interface
 by which customers could quickly ask questions of staff via text and get them answered quickly.
@@ -10,7 +10,8 @@ The interface uses a combination of the Flask web framework and Twilio API, and 
 for UHack at the University of Minnesota. The project reached the second round of judging, which comprised
 of the top twenty entries at the hackathon.
 
-![screenshot](img/screenshot.png)
+![flow](img/flow.png)
+
 
 Dependencies
 ------------
